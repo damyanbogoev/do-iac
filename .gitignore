@@ -6,4 +6,11 @@
 *.tfstate.*
 
 # .tfvars files
-*.tfvars
+*.secrets.tfvars
+
+# IntelliJ IDEA
+.idea
+
+# Visual Studio Code
+debug
+.vscode/
