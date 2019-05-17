@@ -1,0 +1,7 @@
+#cloud-config
+runcmd:
+  - [sed, -i, 's|# api-key=.*|api-key=${powerdns_api_key}|', /etc/powerdns/pdns.conf]
+  - [sed, -i, 's|# webserver-port=.*|webserver-port=${powerdns_api_port}|', /etc/powerdns/pdns.conf]
+  - [sh, /root/setup.sh]
+power_state:
+  mode: reboot

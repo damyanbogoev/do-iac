@@ -40,8 +40,12 @@ variable "nodes_image" {
   default = "centos-7-x64"
 }
 
-variable "powerdns_key" {
+variable "powerdns_api_key" {
   description = "The PowerDNS API key. This can also be specified with PDNS_API_KEY environment variable."
+}
+
+variable "powerdns_api_port" {
+  description = "PowerDNS API port."
 }
 
 variable "bastion_memory_size" {

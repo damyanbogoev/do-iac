@@ -22,6 +22,14 @@ variable "dns_memory_size" {
   description = "The memory size of the dns to be created."
 }
 
+variable "powerdns_api_key" {
+  description = "PowerDNS API key."
+}
+
+variable "powerdns_api_port" {
+  description = "PowerDNS API port."
+}
+
 variable "nodes_ssh_keys" {
   description = "The ssh keys to be used for nodes access from the bastion node."
   type = "list"
