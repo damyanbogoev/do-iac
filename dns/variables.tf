@@ -32,7 +32,7 @@ variable "powerdns_api_port" {
 
 variable "nodes_ssh_keys" {
   description = "The ssh keys to be used for nodes access from the bastion node."
-  type = "list"
+  type = list
 }
 
 variable "tag_general" {
