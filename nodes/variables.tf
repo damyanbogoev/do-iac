@@ -54,12 +54,12 @@ variable "bastion_memory_size" {
 
 variable "bastion_ssh_keys" {
   description = "The ssh keys to be used for bastion access."
-  type = "list"
+  type = list
 }
 
 variable "nodes_ssh_keys" {
   description = "The ssh keys to be used for nodes access from the bastion node."
-  type = "list"
+  type = list
 }
 
 variable "load_balancers" {}

@@ -39,7 +39,7 @@ resource "digitalocean_firewall" "bastion" {
   ]
 
   tags = [
-    "${digitalocean_tag.bastion.name}"]
+    digitalocean_tag.bastion.name]
 }
 
 resource "digitalocean_firewall" "nodes" {
@@ -50,13 +50,13 @@ resource "digitalocean_firewall" "nodes" {
       protocol = "tcp"
       port_range = "22"
       source_tags = [
-        "${digitalocean_tag.bastion.name}"]
+        digitalocean_tag.bastion.name]
     },
     {
       protocol = "udp"
       port_range = "all"
       source_tags = [
-        "${digitalocean_tag.general.name}"]
+        digitalocean_tag.general.name]
     },
     {
       protocol = "icmp"
@@ -65,14 +65,14 @@ resource "digitalocean_firewall" "nodes" {
       // this is caused by issue in Terraform API
       //      port_range = "0"
       source_tags = [
-        "${digitalocean_tag.general.name}"]
+        digitalocean_tag.general.name]
     },
     {
       protocol = "tcp"
       port_range = "all"
       source_tags = [
-        "${digitalocean_tag.general.name}"]
-      source_load_balancer_uids = "${split(",", var.load_balancers)}"
+        digitalocean_tag.general.name]
+      source_load_balancer_uids = split(",", var.load_balancers)
     },
   ]
 
@@ -104,5 +104,5 @@ resource "digitalocean_firewall" "nodes" {
   ]
 
   tags = [
-    "${digitalocean_tag.general.name}"]
+    digitalocean_tag.general.name]
 }
